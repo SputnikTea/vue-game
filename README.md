@@ -1,5 +1,7 @@
 # tic-tac-toe
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/313e33f3-5137-4941-890a-b4c58a13c3c3/deploy-status)](https://app.netlify.com/sites/tea-vue-game/deploys)
+
 ## Project setup
 ```
 yarn install
