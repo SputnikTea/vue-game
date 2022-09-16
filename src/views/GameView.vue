@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 
-const fields = ref(Array(9).fill("_"));
+const fields = reactive(Array<string>(9).fill("_"));
+let nextPlayer = ref("X");
 
 function handleFieldClick(fieldIndex: number) {
-  fields.value[fieldIndex] = "X";
+  fields[fieldIndex] = nextPlayer.value;
+  nextPlayer.value = nextPlayer.value === "X" ? "O" : "X";
 }
 </script>
 
@@ -27,6 +29,9 @@ function handleFieldClick(fieldIndex: number) {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .board div {
